@@ -1,6 +1,6 @@
-
-
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "zoxan";
 $password = "123";
@@ -18,18 +18,29 @@ if ($conn->connect_error) {
 $mail = $_POST['mail'];
 $password = $_POST['password'];
 
-// Создание запроса
-$sql = "SELECT * FROM Users WHERE mail = '$mail' AND password = '$password'";
-$result = $conn->query($sql);
+// Создание запроса с подготовленными выражениями
+$stmt = $conn->prepare("SELECT * FROM Users WHERE mail = ?");
+$stmt->bind_param("s", $mail);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    // Вывод результатов
-    while($row = $result->fetch_assoc()) {
-        echo "Добро пожаловать, " . $row["name"]. "!";
+    // Получаем данные пользователя
+    $user = $result->fetch_assoc();
+
+    // Проверяем пароль
+    if (password_verify($password, $user['password'])) {
+        // Сохраняем информацию о пользователе в сессии
+        $_SESSION['user'] = $user;
+
+        // Перенаправляем пользователя на главную страницу
+        header('Location: index.php');
+    } else {
+        echo "Неверный email или пароль";
     }
-    header('Location: index.php');
 } else {
     echo "Неверный email или пароль";
 }
+$stmt->close();
 $conn->close();
 ?>

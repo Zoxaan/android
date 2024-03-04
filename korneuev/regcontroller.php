@@ -17,18 +17,19 @@ $name = $_POST['name'];
 $mail = $_POST['mail'];
 $password = $_POST['password'];
 
+// Хеширование пароля
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
 // Создание запроса
-$sql = "INSERT INTO users (name, mail, password)
-VALUES ('$name', '$mail', '$password')";
+$sql = "INSERT INTO users (name, mail, password, role)
+VALUES ('$name', '$mail', '$hashed_password', 'user')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Новый пользователь успешно создан";
 } else {
     echo "Ошибка: " . $sql . "<br>" . $conn->error;
-
 }
 
 header('Location: login.php');
 $conn->close();
 ?>
-

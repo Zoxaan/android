@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user'])) {
+    // Пользователь авторизован
+    $user = $_SESSION['user'];
+
+    // Проверка роли пользователя
+    if ($user['role'] == 'admin') {
+    }
+} else {
+    // Пользователь не авторизован
+}
+
+// Выход из сессии и перенаправление на страницу авторизации
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
@@ -65,15 +86,22 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Войти
+                            <?php if (isset($_SESSION['user'])) {
+                                echo "Привет, " . $user['name'];
+                            } else {
+                                echo "Войти";
+                            } ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="login.php">Авторизация</a></li>
                             <li><a class="dropdown-item" href="registration.php">Регистрация</a></li>
+                            <?php if ($user['role'] == 'admin') { ?>
+                                <li><a class="dropdown-item" href="admin_panel.php">Админ панель</a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Выйти</a>
+                        <a class="nav-link" href="logout.php?logout=1">Выйти</a>
                     </li>
                 </ul>
             </div>
