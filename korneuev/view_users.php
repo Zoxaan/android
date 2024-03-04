@@ -59,7 +59,7 @@ $users = $stmt->fetchAll();
             box-shadow: 0 0 10px #000000;
         }
         to {
-            box-shadow: 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
+            box-shadow: 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #e30b0b;
         }
     }
 </style>

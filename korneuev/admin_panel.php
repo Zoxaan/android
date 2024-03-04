@@ -36,12 +36,27 @@ $total_service_orders = $stmt->fetchColumn();
 ?>
 
 <style>
+    <style>
     .dropdown-menu .dropdown-item {
         color: #770000;
     }
     .dropdown-menu .dropdown-item:hover {
         background-color: #f2f2f2;
     }
+
+    .btn-secondary:hover {
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 10px #000000;
+        }
+        to {
+            box-shadow: 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
+        }
+    }
+</style>
 </style>
 
 <body>

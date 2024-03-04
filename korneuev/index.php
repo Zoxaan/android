@@ -12,11 +12,27 @@
         <!-- Карусель -->
         <style>
             .carousel-item img {
-                max-height: 300px; /* Выберите желаемую высоту */
+                max-height: 300px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 30px;
+                height: 30px;
+                background-color: #333;
+                border-radius: 50%;
+                color: #fff;
             }
         </style>
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 80%; margin: 0 auto;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://lekom.ru/lekom_maintenance/images/banner.webp" class="d-block w-100" alt="...">
@@ -28,52 +44,15 @@
                     <img src="https://png.pngtree.com/thumb_back/fw800/background/20230524/pngtree-mobile-phone-tablet-and-laptop-on-black-background-animated-and-retouched-image_2615783.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-
-
-        <h2>Товары</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://printeco.ru/upload/iblock/a11/a1173dc52ce86617c4b6ac03960c1369.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Товар 1</h5>
-                        <p class="card-text">Описание товара 1</p>
-                        <p class="card-text">Цена: 1000</p>
-                        <a href="product_details.php" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="#" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Товар 2</h5>
-                        <p class="card-text">Описание товара 2</p>
-                        <p class="card-text">Цена: 2000</p>
-                        <a href="#" class="btn btn-primary">Подробнее</a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="#" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Товар 3</h5>
-                        <p class="card-text">Описание товара 3</p>
-                        <p class="card-text">Цена: 3000</p>
-                        <a href="#" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
 
         <div class="row mt-5">
             <div class="col-md-12 text-left">
@@ -81,6 +60,7 @@
                 <p>Мы - компания, специализирующаяся на продаже и обслуживании оргтехники. Наша цель - предоставить нашим клиентам высококачественную продукцию и отличный сервис.</p>
             </div>
         </div>
+
 
         <!-- Маленькая картинка -->
         <div class="row mt-3">
@@ -90,9 +70,22 @@
             </div>
         </div>
 
+        <!-- Карта -->
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div style="position:relative;overflow:hidden;">
+                    <a href="https://yandex.ru/maps/10988/belorechensk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Белореченск</a>
+                    <a href="https://yandex.ru/maps/10988/belorechensk/house/lomany_pereulok_9/Z0AYfgBjSEUAQFpufXt2d3trZA==/?ll=39.874894%2C44.776822&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Ломаный переулок, 9 — Яндекс Карты</a>
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=39.874894%2C44.776822&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoyMTYwMDYzNzIwEm3QoNC-0YHRgdC40Y8sINCa0YDQsNGB0L3QvtC00LDRgNGB0LrQuNC5INC60YDQsNC5LCDQkdC10LvQvtGA0LXRh9C10L3RgdC6LCDQm9C-0LzQsNC90YvQuSDQv9C10YDQtdGD0LvQvtC6LCA5IgoNEX4fQhVsGzNC&z=17.12" width="100%" height="500" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     </div>
+
     <?php include "foter.php"; ?>
 
 
