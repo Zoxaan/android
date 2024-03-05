@@ -41,7 +41,6 @@ $total_service_orders = $stmt->fetchColumn();
         color: #770000;
     }
     .dropdown-menu .dropdown-item:hover {
-        background-color: #f2f2f2;
     }
 
     .btn-secondary:hover {

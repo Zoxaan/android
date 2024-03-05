@@ -1,5 +1,5 @@
-<?php include "header.php"; ?>
 <?php
+include "header.php";
 // Подключение к базе данных
 $servername = "localhost";
 $username = "zoxan";
@@ -29,7 +29,6 @@ if(isset($_POST['delete_id'])) {
         exit;
     } catch(PDOException $e) {
         echo "Ошибка удаления услуги: " . $e->getMessage();
-        exit;
     }
 }
 
@@ -50,9 +49,6 @@ $services = $stmt->fetchAll();
         padding: 8px;
         text-align: left;
         border-bottom: 1px solid #ddd;
-    }
-    th {
-        background-color: #f2f2f2;
     }
 </style>
 

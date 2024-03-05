@@ -49,7 +49,6 @@ if (isset($_GET['logout'])) {
     </style>
 
 </head>
-<body>
 <div class="container mt-3">
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
         <div class="container-fluid">
@@ -65,8 +64,8 @@ if (isset($_GET['logout'])) {
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="category.php">Категории</a></li>
-                            <li><a class="dropdown-item" href="uslugi.php">Просмотерть услуги</a></li>
-                            <li><a class="dropdown-item" href="tovars.php">Просмотерть товар</a></li>
+                            <li><a class="dropdown-item" href="uslugi.php">Просмотр услуг</a></li>
+                            <li><a class="dropdown-item" href="tovars.php">Просмотр товаров</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -76,7 +75,7 @@ if (isset($_GET['logout'])) {
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="company.php">О нас</a></li>
                             <li><a class="dropdown-item" href="info.php">Информация</a></li>
-                            <li><a class="dropdown-item" href="#">Пока не ебу</a></li>
+                            <li><a class="dropdown-item" href="#">Пока не знаю</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

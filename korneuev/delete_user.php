@@ -23,7 +23,7 @@ if(isset($_POST['id'])) {
         $stmt->bindParam(':id', $id);
         $stmt->execute();
 
-        echo "Пользователь успешно удален.";
+        header("location:view_users.php");
     } catch(PDOException $e) {
         echo "Ошибка удаления пользователя: " . $e->getMessage();
     }
