@@ -4,7 +4,7 @@
             padding: 50px 0;
         }
         .company-info h2 {
-            color: #3b7a57; /* Цвет заголовка */
+            color: #ffd000; /* Цвет заголовка */
         }
         .company-info p {
             font-size: 18px;

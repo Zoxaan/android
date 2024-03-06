@@ -16,13 +16,14 @@ if ($conn->connect_error) {
 $name = $_POST['name'];
 $mail = $_POST['mail'];
 $password = $_POST['password'];
+$telephone = $_POST['telephone']; // Получаем значение поля "телефон"
 
 // Хеширование пароля
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-// Создание запроса
-$sql = "INSERT INTO users (name, mail, password, role)
-VALUES ('$name', '$mail', '$hashed_password', 'user')";
+// Создание запроса с добавлением поля "телефон"
+$sql = "INSERT INTO users (name, mail, password, telephone, role)
+VALUES ('$name', '$mail', '$hashed_password', '$telephone', 'user')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Новый пользователь успешно создан";

@@ -1,4 +1,20 @@
+<?php
+session_start();
+// Генерируем случайные числа
+$num1 = rand(1, 10);
+$num2 = rand(1, 10);
+// Вычисляем результат
+$result = $num1 + $num2;
+// Сохраняем результат в сессии
+$_SESSION['captcha_result'] = $result;
+$eror = "";
 
+// Проверяем, существует ли ключ 'error' в сессии и не является ли он null
+if (isset($_SESSION['error'])) {
+    $error = $_SESSION['error'];
+    unset($_SESSION['error']); // Удаляем ошибку после ее обработки
+}
+?>
 <body>
 <style>
     body {
@@ -82,6 +98,7 @@
 <div class="container">
     <h2>Авторизация</h2>
     <form method="post" action="log_controller.php">
+
         <div class="form-group">
             <label for="mail">Email:</label>
             <input type="email" class="form-control" id="mail" name="mail" placeholder="Введите email" required>
@@ -89,6 +106,14 @@
         <div class="form-group">
             <label for="password">Пароль:</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Введите пароль" required>
+        </div>
+        <div class="form-group">
+
+            <input type="hidden" value="<?php echo $result ?>" name="result" >
+            <?php echo $eror?>
+
+            <label for="captcha">Решите пример: <?php echo "$num1 + $num2"; ?></label>
+            <input type="text" class="form-control" id="captcha" name="captcha"  required>
         </div>
         <button type="submit" class="btn btn-primary">Войти</button>
     </form>

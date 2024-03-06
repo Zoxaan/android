@@ -9,7 +9,6 @@ if (isset($_SESSION['user'])) {
     if ($user['role'] == 'admin') {
     }
 } else {
-    // Пользователь не авторизован
 }
 
 // Выход из сессии и перенаправление на страницу авторизации
@@ -27,24 +26,65 @@ if (isset($_GET['logout'])) {
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Стили для блока шапки */
         .custom-navbar {
-            background-color: rgba(59, 122, 87, 0.7); /* Прозрачный темно-зеленоватый цвет */
+            background-color: #000000; /* Черный цвет фона */
+            padding: 10px 0; /* Внутренние отступы */
+            border-bottom: 1px solid #333; /* Нижняя граница */
         }
-        .dropdown-menu .dropdown-item:hover {
-            color: #009a41 !important; /* Цвет текста при наведении (зеленый) */
+
+        /* Стили для логотипа */
+        .custom-navbar .navbar-brand {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: 1px;
+            color: #ffd000; /* Желтый цвет текста */
         }
+
+        /* Стили для элементов навигации */
+        .custom-navbar .nav-link {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            color: #ffffff; /* Белый цвет текста */
+            padding: 10px 15px; /* Внутренние отступы */
+            margin: 0 5px; /* Внешние отступы */
+            border-radius: 5px; /* Скругленные углы */
+            transition: background-color 0.3s ease; /* Плавный переход */
+        }
+
+        .custom-navbar .nav-link:hover {
+            background-color: #ffd000; /* Желтый цвет фона при наведении */
+            color: #000000; /* Черный цвет текста при наведении */
+        }
+
+        /* Стили для выпадающего меню */
+        .custom-navbar .dropdown-menu {
+            background-color: #343a40; /* Темный цвет фона */
+            border: none; /* Удаление границы */
+        }
+
+        .custom-navbar .dropdown-item {
+            color: #ffffff; /* Белый цвет текста */
+        }
+
+        .custom-navbar .dropdown-item:hover {
+            background-color: #ffd000; /* Желтый цвет фона при наведении */
+            color: #000000; /* Черный цвет текста при наведении */
+        }
+
+        /* Стили для логотипа */
         .navbar-brand .logo {
             max-height: 40px; /* Устанавливаем максимальную высоту для логотипа */
+            transition: transform 0.3s ease; /* Добавляем плавный переход */
         }
 
-        .company-info h2 {
-            color: #3b7a57; /* Цвет заголовка */
-        }
-
-        .company-info p {
-            font-size: 18px;
-            position: relative;
-            padding-left: 20px;
+        .navbar-brand .logo:hover {
+            transform: scale(1.1); /* Увеличиваем логотип при наведении */
         }
     </style>
 
@@ -94,7 +134,7 @@ if (isset($_GET['logout'])) {
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="login.php">Авторизация</a></li>
                             <li><a class="dropdown-item" href="registration.php">Регистрация</a></li>
-                            <?php if ($user['role'] == 'admin') { ?>
+                            <?php if (isset($user) && $user['role'] == 'admin') { ?>
                                 <li><a class="dropdown-item" href="admin_panel.php">Админ панель</a></li>
                             <?php } ?>
                         </ul>

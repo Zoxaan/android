@@ -30,9 +30,12 @@
                 border-radius: 50%;
                 color: #fff;
             }
+            h2 ,h3 {
+                color: #ffd000; /* Цвет заголовка */
+            }
         </style>
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 80%; margin: 0 auto;">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 60%; margin: 0 auto;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://lekom.ru/lekom_maintenance/images/banner.webp" class="d-block w-100" alt="...">
@@ -77,16 +80,16 @@
         </div>
 
         <div class="row mt-5">
-            <div class="col-md-12 text-left">
+            <div class="col-md-12 text-left max-width: 50%;">
                 <h3>О нашей компании</h3>
-                <p>Мы - компания, специализирующаяся на продаже и обслуживании оргтехники. Наша цель - предоставить нашим клиентам высококачественную продукцию и отличный сервис.</p>
+                <p>Мы - компания, специализирующаяся на продаже и обслуживании оргтехники.</br> Наша цель - предоставить нашим клиентам высококачественную продукцию и отличный сервис.</p>
             </div>
         </div>
 
         <!-- Маленькая картинка -->
         <div class="row mt-3">
             <div class="col-md-12 text-left">
-                <img src="https://it-usluga.ru/wp-content/uploads/2022/03/pdn.jpg" alt="Small Image" style="max-width: 250px;">
+                <img src="https://it-usluga.ru/wp-content/uploads/2022/03/pdn.jpg" alt="Small Image" style="max-width: 300px;">
                 <a href="company.php" class="btn btn-success">Подробнее</a>
             </div>
         </div>

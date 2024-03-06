@@ -36,16 +36,23 @@
                                 echo '</div>';
                                 echo '<p class="card-text">' . $product['description'] . '</p>';
                                 echo '<p class="card-text">Цена: ' . $product['price'] . '</p>';
-                                // Добавление формы "Заказать"
-                                echo '<form action="make_order.php" method="post">';
-                                echo '<div class="form-group">';
-                                echo '<label for="name">Введите ваше имя:</label>';
-                                echo '<input type="text" class="form-control" id="name" name="name" required>';
-                                echo '</div>';
-                                echo '<input type="hidden" name="product_id" id="product_id" value="' . $product['id'] . '">';
-                                echo '<input type="hidden" name="order_date" value="' . date("Y-m-d H:i:s") . '">';
-                                echo '<button type="submit" class="btn btn-primary">Подтвердить заказ</button>';
-                                echo '</form>';
+
+                                // Проверка авторизации пользователя
+                                if(isset($_SESSION['user'])) {
+                                    // Вывод формы "Заказать"
+                                    echo '<form action="make_order.php" method="post">';
+                                    echo '<div class="form-group">';
+                                    echo ' <label for="telephone">Введите ваш номер телефона:</label>';
+                                    echo '<input type="tel" class="form-control" id="telephone" name="telephone" required>';
+                                    echo '</div>';
+                                    echo '<input type="hidden" name="product_id" id="product_id" value="' . $product['id'] . '">';
+                                    echo '<input type="hidden" name="order_date" value="' . date("Y-m-d H:i:s") . '">';
+                                    echo '<button type="submit" class="btn btn-primary">Подтвердить заказ</button>';
+                                    echo '</form>';
+                                } else {
+                                    // Сообщение о необходимости авторизации
+                                    echo '<p class="text-danger">Чтобы заказать товар, пожалуйста, авторизуйтесь.</p>';
+                                }
 
                                 // Здесь можно добавить любую другую информацию о товаре
                             } else {
@@ -64,9 +71,6 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style>
     /* Стили для установки фиксированной высоты для изображений */
     .product-img {

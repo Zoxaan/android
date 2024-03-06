@@ -15,7 +15,7 @@ try {
     $stmt = $db->query($sql);
 
     // Вывод данных о услугах
-    echo '<div class="container mt-5">';
+    echo '<div class="container mt-5 d-flex justify-content-center">';
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo '<div class="col-md-12 mb-4">';
@@ -30,7 +30,6 @@ try {
         echo '<p class="card-text">' . $row['description'] . '</p>';
         echo '<p class="card-text">Цена: ' . $row['price'] . '</p>';
         echo '<a href="full_service_info.php?id=' . $row['id'] . '" class="btn btn-primary">Подробнее</a>';
-
         echo '</div>';
         echo '</div>';
         echo '</div>';
@@ -46,14 +45,38 @@ try {
 
 ?>
 <style>
-    .container {
-        display: flex;
-        justify-content: center;
-    }
+
 
     .card {
-        width: 80%;
-        margin-bottom: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .card-img {
+        object-fit: cover;
+        height: 200px; /* Пример фиксированной высоты для картинки */
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-text {
+        flex-grow: 1;
+    }
+
+    .btn-primary {
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0069d9;
     }
 
     .row.no-gutters {
@@ -61,17 +84,11 @@ try {
         flex-direction: row;
     }
 
-    .col-md-4 {
-        flex: 0 0 auto;
-        width: auto;
-    }
+
 
     .col-md-8 {
         flex: 1;
     }
 
-    .card-img {
-        width: 100%;
-        height: auto;
-    }
+
 </style>

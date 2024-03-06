@@ -6,7 +6,7 @@
         }
 
         .company-info h2 ,h3 {
-            color: #3b7a57; /* Цвет заголовка */
+            color: #ffd000; /* Цвет заголовка */
         }
 
         .company-info p {
@@ -28,7 +28,7 @@
             display: block;
             width: 100%;
             margin-top: 10px;
-            border-top: 3px solid #3b7a57; /* Зеленый цвет линии */
+            border-top: 3px solid #ffd000; /* Зеленый цвет линии */
         }
     </style>
 <body>

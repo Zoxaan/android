@@ -10,7 +10,16 @@
 
 <!-- Навигационная панель -->
 
+<style>
 
+     h2 {
+        color: #ffd000; /* Цвет заголовка */
+    }
+    p {
+        font-size: 18px;
+    }
+
+</style>
 <!-- Контент страницы -->
 <div class="container mt-5">
     <div class="row">

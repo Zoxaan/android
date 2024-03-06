@@ -84,6 +84,10 @@
             <label for="password">Пароль</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Введите пароль" required>
         </div>
+        <div class="form-group">
+            <label for="telephone">Телефон</label>
+            <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="Введите телефон" required>
+        </div>
         <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
     </form>
 </div>

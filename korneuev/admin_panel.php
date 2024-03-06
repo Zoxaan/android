@@ -36,26 +36,25 @@ $total_service_orders = $stmt->fetchColumn();
 ?>
 
 <style>
-    <style>
-    .dropdown-menu .dropdown-item {
-        color: #770000;
-    }
-    .dropdown-menu .dropdown-item:hover {
+
+    .btn-secondary {
+        background-color: #007bff; /* Светло-синий цвет фона */
+        border: none; /* Удаление границы */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Свечение эффект */
+        transition: all 0.3s ease; /* Плавный переход */
     }
 
     .btn-secondary:hover {
-        animation: glow 1s ease-in-out infinite alternate;
+        background-color: #ffd000; /* Темнее синее при наведении */
+        transform: translateY(-2px); /* Плавный эффект наведения */
     }
 
-    @keyframes glow {
-        from {
-            box-shadow: 0 0 10px #000000;
-        }
-        to {
-            box-shadow: 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
-        }
+    .dropdown-menu .dropdown-item {
+        color: #ffd000; /* Темный цвет текста */
     }
-</style>
+
+    .dropdown-menu .dropdown-item:hover {
+    }
 </style>
 
 <body>

@@ -39,6 +39,47 @@ $products = $stmt->fetchAll();
         max-width: 100px;
         height: auto;
     }
+    <style>
+     table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 20px;
+     }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .btn-primary:hover {
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 10px #000000;
+        }
+        to {
+            box-shadow: 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
+        }
+    }
+
+
+    .btn-danger:hover {
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 10px #000000;
+        }
+        to {
+            box-shadow: 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #ffd000;
+        }
+    }
 </style>
 
 <table class="table">

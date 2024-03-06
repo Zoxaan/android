@@ -36,7 +36,7 @@ $service_orders = $stmt->fetchAll();
         <?php foreach ($service_orders as $order): ?>
             <tr>
                 <td><?php echo $order['id']; ?></td>
-                <td><?php echo $order['user_id']; ?></td>
+                <td><?php echo $order['telephone']; ?></td>
                 <td><?php echo $order['service_id']; ?></td>
                 <td><?php echo $order['total_price']; ?></td>
                 <td><?php echo $order['order_date']; ?></td>

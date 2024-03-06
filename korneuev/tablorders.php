@@ -15,7 +15,7 @@ try {
 }
 
 // Получение списка заказов с дополнительными данными о товарах
-$stmt = $db->query("SELECT o.id, o.user_id, o.product_id, o.order_date, p.price AS product_price FROM orders o INNER JOIN products p ON o.product_id = p.id");
+$stmt = $db->query("SELECT * FROM orders");
 $orders = $stmt->fetchAll();
 ?>
 
@@ -36,7 +36,7 @@ $orders = $stmt->fetchAll();
         <?php foreach ($orders as $order): ?>
             <tr>
                 <td><?php echo $order['id']; ?></td>
-                <td><?php echo $order['user_id']; ?></td>
+                <td><?php echo $order['telephone']; ?></td>
                 <td><?php echo $order['product_id']; ?></td>
                 <td><?php echo $order['order_date']; ?></td>
                 <td><?php echo $order['product_price']; ?></td>

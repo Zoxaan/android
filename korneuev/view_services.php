@@ -50,6 +50,34 @@ $services = $stmt->fetchAll();
         text-align: left;
         border-bottom: 1px solid #ddd;
     }
+
+
+    .btn-primary:hover {
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 10px #000000;
+        }
+        to {
+            box-shadow: 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
+        }
+    }
+
+
+    .btn-danger:hover {
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 10px #000000;
+        }
+        to {
+            box-shadow: 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #ffd000;
+        }
+    }
 </style>
 
 <table>

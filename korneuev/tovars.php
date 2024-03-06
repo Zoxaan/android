@@ -29,7 +29,7 @@
         }
     </style>
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 80%; margin: 0 auto;">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width: 60%; margin: 0 auto;">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="https://3dnews.ru/assets/external/illustrations/2023/09/11/1092862/printer-pixabay.jpg" class="d-block w-100" alt="...">
