@@ -38,14 +38,14 @@ $total_service_orders = $stmt->fetchColumn();
 <style>
 
     .btn-secondary {
-        background-color: #007bff; /* Светло-синий цвет фона */
+        background-color: #000000; /* Светло-синий цвет фона */
         border: none; /* Удаление границы */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Свечение эффект */
         transition: all 0.3s ease; /* Плавный переход */
     }
 
     .btn-secondary:hover {
-        background-color: #ffd000; /* Темнее синее при наведении */
+        background-color: #565656; /* Темнее синее при наведении */
         transform: translateY(-2px); /* Плавный эффект наведения */
     }
 

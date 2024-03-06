@@ -47,7 +47,16 @@
                                     echo '</div>';
                                     echo '<input type="hidden" name="product_id" id="product_id" value="' . $product['id'] . '">';
                                     echo '<input type="hidden" name="order_date" value="' . date("Y-m-d H:i:s") . '">';
-                                    echo '<button type="submit" class="btn btn-primary">Подтвердить заказ</button>';
+
+                                    // Проверка наличия ошибок и вывод их под инпутом
+                                    if(isset($_SESSION['error'])) {
+                                        echo '<div class="alert alert-danger mt-3" role="alert">';
+                                        echo $_SESSION['error'];
+                                        echo '</div>';
+                                        unset($_SESSION['error']); // Очищаем ошибку после вывода
+                                    }
+
+                                    echo '<button type="submit" class="btn btn-primary mt-2">Подтвердить заказ</button>';
                                     echo '</form>';
                                 } else {
                                     // Сообщение о необходимости авторизации

@@ -51,6 +51,12 @@ try {
             echo '<p class="text-danger">Чтобы заказать услугу, пожалуйста, авторизуйтесь.</p>';
         }
 
+        // Проверка наличия сообщения об ошибке в сессии
+        if (isset($_SESSION['error_message'])) {
+            echo '<p class="text-danger">' . $_SESSION['error_message'] . '</p>';
+            unset($_SESSION['error_message']); // Очищаем сообщение об ошибке из сессии
+        }
+
         echo '</div>';
         echo '</div>';
         echo '</div>';
