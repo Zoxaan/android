@@ -42,7 +42,7 @@ try {
                 $stmt->execute();
 
                 // Перенаправление на страницу full_service_info с сообщением об успешном заказе
-                $_SESSION['success_message'] = "Ваш заказ на услугу с идентификатором $service_id принят!";
+                $_SESSION['success_message'] = "Ваш заказ на услугу принят!";
                 header("Location: full_service_info.php?id=$service_id");
                 exit();
             }

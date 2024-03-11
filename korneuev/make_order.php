@@ -46,7 +46,7 @@ try {
         $stmt->execute();
 
         // Вывод сообщения об успешном оформлении заказа
-        $_SESSION['success'] = "Ваш заказ на услугу с идентификатором $product_id принят!";
+        $_SESSION['success'] = "Ваш заказ на услугу принят!";
         header("Location: product_details.php?id=" . $product_id); // Перенаправляем обратно на страницу заказа
         exit();
     }

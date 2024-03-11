@@ -14,6 +14,7 @@ if (isset($_SESSION['user'])) {
 // Выход из сессии и перенаправление на страницу авторизации
 if (isset($_GET['logout'])) {
     session_destroy();
+    unset($_SESSION['success_message']); // Очистка только сообщения об успехе
     header("Location: login.php");
     exit;
 }
@@ -89,6 +90,7 @@ if (isset($_GET['logout'])) {
     </style>
 
 </head>
+<body>
 <div class="container mt-3">
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
         <div class="container-fluid">
@@ -115,7 +117,6 @@ if (isset($_GET['logout'])) {
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="company.php">О нас</a></li>
                             <li><a class="dropdown-item" href="info.php">Информация</a></li>
-                            <li><a class="dropdown-item" href="#">Пока не знаю</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -137,17 +138,24 @@ if (isset($_GET['logout'])) {
                             <?php if (isset($user) && $user['role'] == 'admin') { ?>
                                 <li><a class="dropdown-item" href="admin_panel.php">Админ панель</a></li>
                             <?php } ?>
+                            <?php if (isset($user) && $user['role'] == 'user') { ?>
+                                <li><a class="dropdown-item" href="profile.php">Профиль</a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php?logout=1">Выйти</a>
                     </li>
+                    <?php if (isset($_SESSION['success_message'])): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="clear_session.php">Очистить сессию</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
