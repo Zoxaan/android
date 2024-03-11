@@ -1,4 +1,5 @@
 <?php include "header.php"; ?>
+<link rel="stylesheet" href="style.scss">
 <?php
 // Подключение к базе данных
 $servername = "localhost";
@@ -29,7 +30,7 @@ try {
         echo '<h5 class="card-title">' . $row['name'] . '</h5>';
         echo '<p class="card-text">' . $row['description'] . '</p>';
         echo '<p class="card-text">Цена: ' . $row['price'] . '</p>';
-        echo '<a href="full_service_info.php?id=' . $row['id'] . '" class="btn btn-primary">Подробнее</a>';
+        echo ' <a  href="full_service_info.php?id=' . $row['id'] . '" class="btn btn-bubble">Перейти</a>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
@@ -45,47 +46,25 @@ try {
 
 ?>
 <style>
-
-
     .card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
-
-    .card-img {
-        object-fit: cover;
-        height: 200px; /* Пример фиксированной высоты для картинки */
-    }
-
     .card-body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-
     .card-text {
         flex-grow: 1;
     }
-
-    .btn-primary {
-        transition: background-color 0.3s ease;
-    }
-
-    .btn-primary:hover {
-        background-color: #0069d9;
-    }
-
     .row.no-gutters {
         display: flex;
         flex-direction: row;
     }
-
-
-
     .col-md-8 {
         flex: 1;
     }

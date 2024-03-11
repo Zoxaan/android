@@ -1,4 +1,5 @@
 <?php include "header.php"; ?>
+<link rel="stylesheet" href="style2.scss">
     <style>
         #map {
             height: 400px;
@@ -18,6 +19,7 @@
     p {
         font-size: 18px;
     }
+
 
 </style>
 <!-- Контент страницы -->

@@ -55,6 +55,67 @@ $total_service_orders = $stmt->fetchColumn();
 
     .dropdown-menu .dropdown-item:hover {
     }
+    .btnn {
+        text-decoration: none;
+        color: #6b5770;
+        background-image: linear-gradient(90deg, #fd7f34, #bd155b);
+        display: inline-block;
+        padding: 10px 40px;
+        border: 1px solid;
+        position: relative;
+        z-index: 0;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin: 0 15px 15px 0;
+        outline: none;
+        cursor: pointer;
+        user-select: none;
+        appearance: none;
+        touch-action: manipulation;
+    }
+    .btnn:before {
+        content: '';
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        background: linear-gradient(90deg, #fd7f34, #bd155b);
+        z-index: -2;
+        transition: .4s;
+        border-radius: 5px;
+    }
+    .btnn:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #fff, #fff);
+        z-index: -1;
+        transition: .4s;
+        border-radius: 4px;
+    }
+    .btnn:hover {
+        color: #fff;
+        transition: .3s;
+    }
+    .btnn:hover:after {
+        background: linear-gradient(90deg, #fd7f34, #bd155b);
+    }
+    .btnn:active:after {
+        background: linear-gradient(90deg, #d96d2d, #760f3a);
+    }
+    .btnn:focus-visible {
+        box-shadow: 0 0 0 5px #fd7f34;
+    }
+    .btnn:disabled {
+        pointer-events: none;
+    }
+    .btnn:disabled:before {
+        filter: grayscale(100%);
+    }
 </style>
 
 <body>
@@ -91,7 +152,7 @@ $total_service_orders = $stmt->fetchColumn();
         </div>
     </div>
 </div>
-
+<a class="btnn" href="index.php">Вернуться</a>
 <!-- Гифка -->
 <!-- Гифка -->
 <div class="text-center mt-5">
